@@ -1,0 +1,164 @@
+/* Reset CSS */
+* {
+    /* Remover margens, paddings, estilos de lista, decorações de texto e definir família de fonte como Arial */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Arial";
+    box-sizing: border-box;
+  }
+  
+  /* Estilos do corpo */
+  body {
+    /* Definir cor de fundo como #fefefe */
+    background-color: #fefefe;
+  }
+  
+  /* Estilos do cabeçalho */
+  header {
+    /* Definir largura como 100%, altura como 80px, cor de fundo como #11101b e exibir como flexbox */
+    width: 100%;
+    height: 80px;
+    background-color: #11101b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+  }
+  
+  /* Estilos do logotipo */
+  .logo {
+    /* Definir tamanho de fonte como 28px, peso de fonte como negrito e cor como #fefefe */
+    font-size: 28px;
+    font-weight: bold;
+    color: #fefefe;
+  }
+  
+  /* Estilos do menu para mobile */
+  .menu-celular {
+    /* Ocultar menu */
+    display: none;
+  }
+  
+  /* Estilos do menu */
+  .menu ul {
+    /* Exibir como flexbox */
+    display: flex;
+  }
+  
+  .menu ul li a {
+    /* Definir cor como #fefefe, tamanho de fonte como 18px, padding como 10px 25px, border-radius como 50px e margem como 0 5px */
+    color: #fefefe;
+    font-size: 18px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    margin: 0 5px;
+    transition: 0.2s;
+  }
+  
+  .menu ul li a:hover {
+    /* Definir cor como #11101b e cor de fundo como #fefefe ao passar o mouse */
+    color: #11101b;
+    background-color: #fefefe;
+  }
+  
+  /* Estilos do menu ativo */
+  .menu ul li a.ativo {
+    /* Definir cor como #11101b e cor de fundo como #fefefe */
+    color: #11101b;
+    background-color: #fefefe;
+  }
+  
+  /* Media queries para telas menores que 1320px */
+  @media only screen and (max-width: 1320px) {
+    header {
+      /* Ajustar padding para 0 50px */
+      padding: 0 50px;
+    }
+  }
+  
+  /* Media queries para telas menores que 1100px */
+  @media only screen and (max-width: 1100px) {
+    header {
+      /* Ajustar padding para 0 50px */
+      padding: 0 50px;
+    }
+  }
+  
+  /* Media queries para telas menores que 900px */
+  @media only screen and (max-width: 900px) {
+    .menu-celular {
+      /* Exibir menu para mobile */
+      display: block;
+      cursor: pointer;
+    }
+    
+    .menu-celular .linha {
+      /* Estilos para as linhas do menu mobile */
+      width: 30px;
+      height: 3px;
+      background-color: #fefefe;
+      margin: 6px 0;
+    }
+  
+    .menu {
+      /* Estilos do menu para mobile */
+      border-top: 1px solid #1a1925;
+
+      height: 0;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100vw;
+      background-color: #11101b;
+      transition: 0.2s;
+      overflow: hidden;
+    }
+
+
+    .menu.active {
+      /* Estilos do menu ativo para mobile */
+      height: 400px;
+    }
+  
+    .menu.active ul {
+      /* Exibir lista do menu ativo */
+      opacity: 1;
+    }
+    
+    .menu ul {
+      /* Estilos da lista do menu para mobile */
+      display: flex;
+      flex-direction: column;
+      gap: 42px;
+      /* width: fit-content; */
+      /* margin: 80px auto 0 auto; */
+      margin: 70px auto; 
+      text-align: center;
+      transition: 0.5s;
+      opacity: 0;
+    }
+  }
+  
+  /* Media queries para telas menores que 336px */
+  @media only screen and (max-width: 336px) {
+    .logo {
+      /* Ajustar tamanho de fonte do logotipo para 18px */
+      font-size: 18px;
+    }
+  }
+
+
+
+  /* 
+  
+  Explicações gerais 
+
+  Quando você define uma classe no CSS, como .menu.active, ela não é aplicada automaticamente a nenhum elemento. Ela fica "dormindo", esperando ser ativada.
+  
+  Quando você define overflow: hidden; em um elemento, você está dizendo ao navegador que:
+    Oculte qualquer conteúdo que ultrapasse os limites do elemento (ou seja, que esteja fora da área visível do elemento).
+
+Em outras palavras, overflow: hidden; "corta" o conteúdo que ultrapassa os limites do elemento, tornando-o invisível.
+  */
